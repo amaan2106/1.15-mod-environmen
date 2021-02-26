@@ -30,6 +30,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
+import software.bernie.geckolib.GeckoLib;
 
 
 
@@ -54,10 +55,11 @@ public class TutorialMod {
 		ItemInit.ITEMS.register(modEventBus);
 		BlockInit.BLOCKS.register(modEventBus);
 		ModEntityTypes.ENTITY_TYPES.register(modEventBus);
-		
+		GeckoLib.initialize();
 
 		instance = this;
 		MinecraftForge.EVENT_BUS.register(this);
+		
 	}
 
 	@SubscribeEvent
@@ -66,7 +68,7 @@ public class TutorialMod {
 
 		
 
-		LOGGER.debug("Registered BlockItems!");
+		LOGGER.debug("Registered  BlockItems!");
 	}
 
 	
